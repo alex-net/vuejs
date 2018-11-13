@@ -1,0 +1,58 @@
+@font-face{
+	font-family:Exo2;
+	src:url(/Exo2.0-Thin.otf);
+}
+@import url(trebuchet-ms/stylesheet.css);
+@import "vars";
+
+
+html,body {margin:0;height:100%;font-family:Exo2}
+
+html {background:url(../imgs/bg.jpg);height:100%; 
+	body {background:linear-gradient(to bottom, rgba(10,10,10,0.4) , transparent 75%, rgba(10,10,10,0.4) );min-height:100%;}
+}
+ .content {text-align:center;
+ 	@media screen and (min-width:1110px){
+ 		height:590px;margin-top:-295px;position:absolute;top:50%;width:100%;;
+ 	}
+
+ 	.title {color:white;font-size:2.25em;padding-bottom:0.5em;}
+ 	.el {width:320px;height:480px;display:inline-block;vertical-align:top; margin:0 25px 3em;background:url(../imgs/bg-el.png) 0 0 no-repeat;position:relative;font-family:"Trebuchet MS";box-sizing:border-box;padding:1.5em 3em;text-align:left;
+ 		@media screen and (max-width:480px){
+ 			margin:0 0 3em;
+ 		}
+ 		
+ 		.yastvo {color:#666;}
+ 		.no-yastvo {color:$selhover;display:none;}
+ 		.capt {font-size:3em;font-weight:bold;}
+ 		.mit {font-size:1.5em;font-weight:bold;}
+ 		.descr {padding-top:1em;color:#666;font-size:0.875em;}
+ 		.size {position:absolute;right:1em;bottom:1em;width:81px;height:81px;border-radius:100%;font-size:1.3125em;text-align:center;color:white;background:$def;
+ 			.value {font-size:2em;padding-top:0.25em;line-height:1em;}
+ 		}
+ 		.descr2 {font-size:0.815em;color:white;position:absolute;left:0;bottom:-2em;text-align:center;width:100%;
+ 			.text2 .buy{color:#1698d9;border-bottom:1px dashed #1698d9;font-weight:bold;cursor:pointer; }
+ 			.text3 {color:#ffff66;}
+ 		}
+
+ 		&:hover {background-position:-320px 0;
+ 			.size  {background:$defhover;}
+ 		}
+ 		&.sel{
+ 			background-position:0 -480px;
+ 			.size {background:$sel;}
+ 			&:hover {background-position:-320px -480px;
+ 				.size {background:$selhover;}
+ 				.yastvo.ahover {display:none;}
+ 				.no-yastvo.ahover {display:block;}
+ 			}
+ 			
+ 		}
+ 		&.dis {background-position:0 -960px;
+ 			.yastvo, .capt, .mit, .descr{opacity:0.2;}
+ 			.size {background:$dis;}
+ 		}
+ 	}
+ } 
+
+

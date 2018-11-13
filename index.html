@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Тестовое задание</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="content">
+		<div class="title">Ты сегодня покормил кота?</div>
+		<div v-for="cat in cats" class="el" :class="{sel:cat.sel,dis:!cat.available}" @click="makeselected(cat)" @mouseout.self="hoverel(cat,$event)" >
+			<div class="yastvo" :class="{ahover:!cat.afterhover}">Сказочное заморское яство</div>
+			<div class="no-yastvo" :class="{ahover:!cat.afterhover}">Котэ не одобряет?</div>
+			<div class="capt">{{productname}}</div>
+			<div class="mit">с {{cat.mit}}</div>
+			<div class="descr"><strong>{{cat.porcii}}</strong> порций <div v-html="cat.bonus"></div></div>
+			<div class="size">
+				<div class="value">{{cat.size}}</div>кг
+			</div>
+			<div class="descr2">
+				<span v-if="cat.sel&&cat.available" class="text1" >{{cat.descr2}}</span>
+				<span v-if="!cat.sel&&cat.available" class="text2">Чего сидишь? Порадуй котэ, <span class="buy">купи</span>. </span>
+				<span v-if="!cat.available" class="text3">Печалька, с {{cat.mit}} закончился.</span>
+			</div>
+		</div>
+	
+	</div>
+
+<script type="text/javascript" defer src="/js/vue.js"></script>
+<script type="text/javascript" defer src="/js/script.js"></script>
+</body>
+</html>
